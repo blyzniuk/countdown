@@ -1,9 +1,15 @@
 #timer, .title {
     font-family: Comfortaa, Helvetica, sans-serif;
     text-align: center;
-    margin-top: 100px; 
+    margin-top: 15vh;
 }
 
 #timer {
-    font-size: 60px;
+    font-size: 15vw;
+}
+
+@media only screen and (min-width : 400px) {
+    #timer {
+        font-size: 60px;
+    }
 }
