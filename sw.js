@@ -1,4 +1,4 @@
-var cacheName = 'v1';
+var cacheName = 'v1.1';
 
 var cacheFiles = [
     './',
@@ -58,7 +58,7 @@ self.addEventListener('fetch', function(e) {
                         });
                     })
                     .catch(function(err) {
-                        console.warn('[SW] Fetching and caching error');
+                        console.warn('[SW] Fetching and caching error', err);
                     });
             })
     );
