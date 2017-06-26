@@ -21,7 +21,8 @@ var timerId = setInterval(function() {
     diffTime -= second;
     if (diffTime <= 0) {
         clearInterval(timerId);
-        title.innerText = 'Time has come!'
+        title.innerText = 'Time has come!';
+        timer.innerText = [0, 0, 0, 0].join('  :  ');
     }
 }, second);
 
