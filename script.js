@@ -1,4 +1,5 @@
 var timer = document.getElementById('timer'),
+    title = document.getElementById('title')
     day = 1000*60*60*24,
     hour = 1000*60*60,
     minute = 1000*60,
@@ -9,7 +10,7 @@ function getWithZero(number) {
     return number > 9 ? number : '0' + number;
 }
 
-setInterval(function() {
+var timerId = setInterval(function() {
     var days = Math.floor(diffTime/day), timeLeft = diffTime - days*day,
     hours = Math.floor(timeLeft/hour), timeLeft = timeLeft - hours*hour,
     minutes = Math.floor(timeLeft/minute), timeLeft = timeLeft - minutes*minute,
@@ -18,6 +19,10 @@ setInterval(function() {
 
     timer.innerText = time.join('  :  ');
     diffTime -= second;
+    if (diffTime <= 0) {
+        clearInterval(timerId);
+        title.innerText = 'Time has come!'
+    }
 }, second);
 
 if ('serviceWorker' in navigator) {
